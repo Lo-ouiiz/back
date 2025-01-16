@@ -15,3 +15,5 @@ Troisièmement, j'aurais encapsulé les données envoyées dans le body dans un 
 Quatrièmement, je ne vois pas la différence entre les deux requêtes affichant des miels en fonction des tags.
 Pourtant, on veut afficher deux choses différentes : soit les miels avec tel tag ET tel tag, soit les miels avec tel tag OU tel tag.
 J'aurais donc fait passer les tags dans le body de la requête avec une information supplémentaire pour le filtrage.
+
+Cinquièmement, j'aurais supprimé le JWT token si l'utilisateur se déconnecte.
