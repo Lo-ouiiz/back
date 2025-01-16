@@ -30,7 +30,7 @@ mielRouter.post("/", checkToken, async (req, res) => {
     }
 });
 
-mielRouter.put("/:id/prix/10", checkToken, async (req, res) => {
+mielRouter.put("/:id", checkToken, async (req, res) => {
     const { nom, description, prix } = req.body;
     const actual = await Miel.findOne({ where: { id: req.params.id } });
     if (actual) {

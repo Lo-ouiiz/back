@@ -1,29 +1,34 @@
 ### Créer un utilisateur
-POST http://localhost:3102/creer
+POST http://localhost:3102/api/auth/signup
 Content-Type: application/json
 
 {
-  "nom_utilisateur": "test",
-  "mdp": "test123/"
+  "username": "test",
+  "password": "test123/"
 }
 
 ### Se connecter
-POST http://localhost:3102/me-connecter
+POST http://localhost:3102/api/auth/login
 Content-Type: application/json
 
 {
-  "nom_utilisateur": "test",
-  "mdp": "test123/"
+  "username": "test",
+  "password": "test123/"
 }
 
+### Se déconnecter
+POST http://localhost:3102/api/auth/logout
+Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxNTo0MDo1My44NDdaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxNTo0MDo1My44NDdaIiwiaWF0IjoxNzM3MDQyMDU3fQ.De5f_jP52ztKtpZJHAt9AfI8uAT2oWSIeNa8L6B246c
+
+
 ### Récupérer liste miels
-GET http://localhost:3102/miels
-Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxNDo0OTo1NC43NzZaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxNDo0OTo1NC43NzZaIiwiaWF0IjoxNzM3MDM4OTk2fQ.IeC-07lDxdZ_viN_e-29q4gdDNICGNzWzs5bPXP2I4g
+GET http://localhost:3102/api/miels
+Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxNTo0MDo1My44NDdaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxNTo0MDo1My44NDdaIiwiaWF0IjoxNzM3MDQyMDU3fQ.De5f_jP52ztKtpZJHAt9AfI8uAT2oWSIeNa8L6B246c
 Content-Type: application/json
 
 ### Créer miel
-POST http://localhost:3102/miels
-Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxNDo0OTo1NC43NzZaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxNDo0OTo1NC43NzZaIiwiaWF0IjoxNzM3MDM4OTk2fQ.IeC-07lDxdZ_viN_e-29q4gdDNICGNzWzs5bPXP2I4g
+POST http://localhost:3102/api/miels
+Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxNTo0MDo1My44NDdaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxNTo0MDo1My44NDdaIiwiaWF0IjoxNzM3MDQyMDU3fQ.De5f_jP52ztKtpZJHAt9AfI8uAT2oWSIeNa8L6B246c
 Content-Type: application/json
 
 {
@@ -33,13 +38,13 @@ Content-Type: application/json
 }
 
 ### Récupérer un miel
-GET http://localhost:3102/miels/4
-Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxNDo0OTo1NC43NzZaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxNDo0OTo1NC43NzZaIiwiaWF0IjoxNzM3MDM4OTk2fQ.IeC-07lDxdZ_viN_e-29q4gdDNICGNzWzs5bPXP2I4g
+GET http://localhost:3102/api/miels/1
+Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxNTo0MDo1My44NDdaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxNTo0MDo1My44NDdaIiwiaWF0IjoxNzM3MDQyMDU3fQ.De5f_jP52ztKtpZJHAt9AfI8uAT2oWSIeNa8L6B246c
 Content-Type: application/json
 
 ### Modifier un miel
-PUT http://localhost:3102/miels/2
-Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxNDo0OTo1NC43NzZaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxNDo0OTo1NC43NzZaIiwiaWF0IjoxNzM3MDM4OTk2fQ.IeC-07lDxdZ_viN_e-29q4gdDNICGNzWzs5bPXP2I4g
+PUT http://localhost:3102/api/miels/1
+Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxNTo0MDo1My44NDdaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxNTo0MDo1My44NDdaIiwiaWF0IjoxNzM3MDQyMDU3fQ.De5f_jP52ztKtpZJHAt9AfI8uAT2oWSIeNa8L6B246c
 Content-Type: application/json
 
 {
@@ -49,13 +54,13 @@ Content-Type: application/json
 }
 
 ### Supprimer un miel
-DELETE http://localhost:3102/miels/3
-Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxNDo0OTo1NC43NzZaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxNDo0OTo1NC43NzZaIiwiaWF0IjoxNzM3MDM4OTk2fQ.IeC-07lDxdZ_viN_e-29q4gdDNICGNzWzs5bPXP2I4g
+DELETE http://localhost:3102/api/miels/1
+Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxNTo0MDo1My44NDdaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxNTo0MDo1My44NDdaIiwiaWF0IjoxNzM3MDQyMDU3fQ.De5f_jP52ztKtpZJHAt9AfI8uAT2oWSIeNa8L6B246c
 Content-Type: application/json
 
 ### Ajouter tag
-POST http://localhost:3102/tags
-Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxNDo0OTo1NC43NzZaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxNDo0OTo1NC43NzZaIiwiaWF0IjoxNzM3MDM4OTk2fQ.IeC-07lDxdZ_viN_e-29q4gdDNICGNzWzs5bPXP2I4g
+POST http://localhost:3102/api/tags
+Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxNTo0MDo1My44NDdaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxNTo0MDo1My44NDdaIiwiaWF0IjoxNzM3MDQyMDU3fQ.De5f_jP52ztKtpZJHAt9AfI8uAT2oWSIeNa8L6B246c
 Content-Type: application/json
 
 {
