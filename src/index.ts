@@ -34,11 +34,11 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const apiRouter = express.Router();
-app.use('/', authRouter);
-app.use('/miels', mielRouter);
-app.use('/tags', tagRouter);
+apiRouter.use('/auth', authRouter);
+apiRouter.use('/miels', mielRouter);
+apiRouter.use('/tags', tagRouter);
 
-//app.use("/api", apiRouter);
+app.use("/api", apiRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${process.env.PORT}!`)

@@ -5,14 +5,6 @@ import { checkToken } from "../middlewares/checkToken";
 export const mielRouter = Router();
 
 mielRouter.get("/", checkToken, async (req, res) => {
-    // const tagList = req.query['tags'];
-    // if (tagList) {
-    //     const miels = await Miel.findAll( where: {});
-    // } else {
-    //     const miels = await Miel.findAll();
-    //     res.json(miels);
-    // }
-
     const miels = await Miel.findAll();
     res.json(miels);
 });
