@@ -28,7 +28,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const apiRouter = express.Router();
-app.use('/', authRouter, mielRouter);
+app.use('/', authRouter);
+app.use('/miels', mielRouter);
 
 //app.use("/api", apiRouter);
 

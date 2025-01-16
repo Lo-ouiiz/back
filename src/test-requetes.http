@@ -15,3 +15,40 @@ Content-Type: application/json
   "nom_utilisateur": "test",
   "mdp": "test123/"
 }
+
+### Récupérer liste miels
+GET http://localhost:3102/miels
+Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxMzo1NjozMy4yNjZaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxMzo1NjozMy4yNjZaIiwiaWF0IjoxNzM3MDM3MDEzfQ.jaNbhcqvoEIA14qV1oRlDNmdw9VHbT9EqTcmwaUmRtI
+Content-Type: application/json
+
+### Créer miel
+POST http://localhost:3102/miels
+Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxMzo1NjozMy4yNjZaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxMzo1NjozMy4yNjZaIiwiaWF0IjoxNzM3MDM3MDEzfQ.jaNbhcqvoEIA14qV1oRlDNmdw9VHbT9EqTcmwaUmRtI
+Content-Type: application/json
+
+{
+  "nom": "Miel test",
+  "description": "Ceci est un miel.",
+  "prix": 10
+}
+
+### Récupérer un miel
+GET http://localhost:3102/miels/4
+Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxMzo1NjozMy4yNjZaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxMzo1NjozMy4yNjZaIiwiaWF0IjoxNzM3MDM3MDEzfQ.jaNbhcqvoEIA14qV1oRlDNmdw9VHbT9EqTcmwaUmRtI
+Content-Type: application/json
+
+### Modifier un miel
+PUT http://localhost:3102/miels/2
+Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxMzo1NjozMy4yNjZaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxMzo1NjozMy4yNjZaIiwiaWF0IjoxNzM3MDM3MDEzfQ.jaNbhcqvoEIA14qV1oRlDNmdw9VHbT9EqTcmwaUmRtI
+Content-Type: application/json
+
+{
+  "nom": "Miel tests",
+  "description": "Ceci est un miel.",
+  "prix": 10
+}
+
+### Supprimer un miel
+DELETE http://localhost:3102/miels/3
+Authorization: Believe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxMzo1NjozMy4yNjZaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxMzo1NjozMy4yNjZaIiwiaWF0IjoxNzM3MDM3MDEzfQ.jaNbhcqvoEIA14qV1oRlDNmdw9VHbT9EqTcmwaUmRtI
+Content-Type: application/json
