@@ -1,0 +1,141 @@
+### Créer un utilisateur
+POST http://localhost:1337/api/auth/local/register
+Content-Type: application/json
+
+{
+  "username": "test",
+  "email": "test@mail.com",
+  "password": "test123/"
+}
+
+### Changer mot de passe
+POST http://localhost:1337/api/auth/change-password
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0QG1haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwiaWF0IjoxNzM3MDI0NTEwfQ.n4ZUTnjnZ6PfTodM9B91nkgx7ngfgjxrNUJlholvCwU
+
+{
+  "currentPassword": "test123/",
+  "password": "Test123/",
+  "passwordConfirmation": "Test123/"
+}
+
+### Récupérer le JWT token
+POST http://localhost:1337/api/auth/local
+Content-Type: application/json
+
+{
+  "identifier": "test@mail.com",
+  "password": "test123/"
+}
+
+### Déconnexion
+POST http://localhost:1337/api/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0QG1haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwiaWF0IjoxNzM3MDI0NTEwfQ.n4ZUTnjnZ6PfTodM9B91nkgx7ngfgjxrNUJlholvCwU
+
+### Informations sur le compte
+GET http://localhost:1337/api/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0QG1haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwiaWF0IjoxNzM3MDI0NTEwfQ.n4ZUTnjnZ6PfTodM9B91nkgx7ngfgjxrNUJlholvCwU
+
+###
+GET http://localhost:1337/api/exemples
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0QG1haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwiaWF0IjoxNzM3MDI0NTEwfQ.n4ZUTnjnZ6PfTodM9B91nkgx7ngfgjxrNUJlholvCwU
+
+
+###
+POST http://localhost:1337/api/exemples
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0QG1haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwiaWF0IjoxNzM3MDI0NTEwfQ.n4ZUTnjnZ6PfTodM9B91nkgx7ngfgjxrNUJlholvCwU
+Content-Type: application/json
+
+{
+    "data": {
+        "name": "test",
+        "number": 1,
+        "image": "test"
+    }
+}
+
+###
+GET http://localhost:1337/api/actors
+
+###
+POST http://localhost:1337/api/actors/
+Content-Type: application/json
+
+{
+    "data": {
+        "name": "FKA twigs"
+    }
+}
+
+# ###
+# GET http://localhost:1337/api/free-games
+
+# ###
+# POST http://localhost:1337/api/free-games
+# Content-Type: application/json
+
+# {
+#     "data": {
+#         "name": "Sonic",
+#         "description": "un hérisson bleu",
+#         "image": "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/software/switch/70010000040331/desc/d13123553d5a05ebd2f3217db24b35c13131e1cdcf9c5aeb1552ba8e67efd4d9"
+#     }
+# }
+
+# ###
+# GET http://localhost:1337/api/free-games/1
+
+# ###
+# PUT http://localhost:1337/api/free-games/1
+# Content-Type: application/json
+
+# {
+#     "data": {
+#         "name": "Sonic",
+#         "description": "un hérisson bleu et rapide",
+#         "img": "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/software/switch/70010000040331/desc/d13123553d5a05ebd2f3217db24b35c13131e1cdcf9c5aeb1552ba8e67efd4d9"
+#     }
+# }
+
+# ###
+# DELETE http://localhost:1337/api/free-games/1
+
+# ###
+# GET http://localhost:1337/api/official-games
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0QG1haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwiaWF0IjoxNzM3MDI0NTEwfQ.n4ZUTnjnZ6PfTodM9B91nkgx7ngfgjxrNUJlholvCwU
+
+# ###
+# POST http://localhost:1337/api/official-games
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0QG1haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwiaWF0IjoxNzM3MDI0NTEwfQ.n4ZUTnjnZ6PfTodM9B91nkgx7ngfgjxrNUJlholvCwU
+
+# {
+#     "data": {
+#         "name": "Sonic Deluxe",
+#         "description": "un hérisson bleu",
+#         "price": 59,
+#         "image": "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/software/switch/70010000040331/desc/d13123553d5a05ebd2f3217db24b35c13131e1cdcf9c5aeb1552ba8e67efd4d9"
+#     }
+# }
+
+# ###
+# GET http://localhost:1337/api/official-games/1
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0QG1haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwiaWF0IjoxNzM3MDI0NTEwfQ.n4ZUTnjnZ6PfTodM9B91nkgx7ngfgjxrNUJlholvCwU
+
+# ###
+# PUT http://localhost:1337/api/official-games/1
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0QG1haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwiaWF0IjoxNzM3MDI0NTEwfQ.n4ZUTnjnZ6PfTodM9B91nkgx7ngfgjxrNUJlholvCwU
+
+# {
+#     "data": {
+#         "name": "Sonic Deluxe",
+#         "description": "un hérisson bleu",
+#         "image": "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/software/switch/70010000040331/desc/d13123553d5a05ebd2f3217db24b35c13131e1cdcf9c5aeb1552ba8e67efd4d9",
+#         "price": 500
+#     }
+# }
+
+# ###
+# DELETE http://localhost:1337/api/official-games/1
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0QG1haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwidXBkYXRlZEF0IjoiMjAyNS0wMS0xNlQxMDozOTozNC43NTJaIiwiaWF0IjoxNzM3MDI0NTEwfQ.n4ZUTnjnZ6PfTodM9B91nkgx7ngfgjxrNUJlholvCwU

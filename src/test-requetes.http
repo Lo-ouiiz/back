@@ -1,0 +1,17 @@
+### Créer un utilisateur
+POST http://localhost:3102/creer
+Content-Type: application/json
+
+{
+  "nom_utilisateur": "test",
+  "mdp": "test123/"
+}
+
+### Se connecter
+POST http://localhost:3102/me-connecter
+Content-Type: application/json
+
+{
+  "nom_utilisateur": "test",
+  "mdp": "test123/"
+}
