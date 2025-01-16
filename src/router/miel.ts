@@ -1,14 +1,23 @@
 import { Router } from "express";
 import { Miel } from "..";
+import { checkToken } from "../middlewares/checkToken";
 
 export const mielRouter = Router();
 
-mielRouter.get("/", async (req, res) => {
+mielRouter.get("/", checkToken, async (req, res) => {
+    // const tagList = req.query['tags'];
+    // if (tagList) {
+    //     const miels = await Miel.findAll( where: {});
+    // } else {
+    //     const miels = await Miel.findAll();
+    //     res.json(miels);
+    // }
+
     const miels = await Miel.findAll();
     res.json(miels);
 });
 
-mielRouter.get("/:id", async (req, res) => {
+mielRouter.get("/:id", checkToken, async (req, res) => {
     const miel = await Miel.findOne({ where: { id: req.params.id } });
     if (miel) {
         res.json(miel);
@@ -18,7 +27,7 @@ mielRouter.get("/:id", async (req, res) => {
     }
 });
 
-mielRouter.post("/", async (req, res) => {
+mielRouter.post("/", checkToken, async (req, res) => {
     const { nom, description, prix } = req.body;
     if(!nom || !description || !prix){
         res.status(400).send("Missing required information");
@@ -29,7 +38,7 @@ mielRouter.post("/", async (req, res) => {
     }
 });
 
-mielRouter.put("/:id/prix/10", async (req, res) => {
+mielRouter.put("/:id/prix/10", checkToken, async (req, res) => {
     const { nom, description, prix } = req.body;
     const actual = await Miel.findOne({ where: { id: req.params.id } });
     if (actual) {
@@ -41,7 +50,7 @@ mielRouter.put("/:id/prix/10", async (req, res) => {
     }
 });
 
-mielRouter.delete("/:id", async (req, res) => {
+mielRouter.delete("/:id", checkToken, async (req, res) => {
     const actual = await Miel.findOne({ where: { id: req.params.id } });
     if (actual) {
         await actual.destroy();

@@ -19,7 +19,7 @@ export async function checkToken(req: Request, res: Response, next: NextFunction
     else {
 
         const [typeToken, token] = fullToken.split(" ");
-        if(typeToken !== "Bearer"){
+        if(typeToken !== "Believe"){
             res.status(401).send("Invalid token type");
         }
         else {
